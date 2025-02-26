@@ -60,7 +60,7 @@ fetch("/api/generate", requestOptions)
       {generated && 
       <code>
         <span>Your Link:</span>
-          <Link target='_blank' href={generated}>{generated}</Link> 
+          <Link target='_blank' href={generated}>click here</Link> 
         </code>}
 
     </div>
