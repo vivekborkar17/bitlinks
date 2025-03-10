@@ -41,12 +41,12 @@ fetch("/api/generate", requestOptions)
     
 
   return (
-    <div className='mx-auto max-w-md md:max-w-lg lg:max-w-xl bg-gradient-to-r from-purple-400 to-purple-600 text-white shadow-lg my-16 p-8 rounded-2xl flex flex-col gap-6'>
-      <h1 className='font-extrabold text-3xl text-center tracking-wide'> Generate Your Short URL </h1>
+    <div className='mx-auto max-w-sm sm:max-w-md md:max-w-lg lg:max-w-xl bg-gradient-to-r from-purple-400 to-purple-600 text-white shadow-lg my-16 p-6 sm:p-8 rounded-2xl flex flex-col gap-6'>
+      <h1 className='font-extrabold text-3xl text-center tracking-wide'>Generate Your Short URL</h1>
 
       <div className='flex flex-col gap-3'>
         <input 
-          className='p-4 py-3 bg-white text-black placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-purple-300 rounded-xl shadow-md transition-all duration-300' 
+          className='p-3 sm:p-4 py-2 bg-white text-black placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-purple-300 rounded-xl shadow-md transition-all duration-300 w-full' 
           type='text' 
           value={url} 
           placeholder='Enter Your URL'
@@ -54,7 +54,7 @@ fetch("/api/generate", requestOptions)
         />
 
         <input 
-          className='p-4 py-3 bg-white text-black placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-purple-300 rounded-xl shadow-md transition-all duration-300' 
+          className='p-3 sm:p-4 py-2 bg-white text-black placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-purple-300 rounded-xl shadow-md transition-all duration-300 w-full' 
           type='text' 
           placeholder='Enter Your Preferred Short URL Text' 
           value={shorturl} 
@@ -63,13 +63,13 @@ fetch("/api/generate", requestOptions)
 
         <button 
           onClick={generate} 
-          className='bg-purple-800 hover:bg-purple-900 text-white p-3 font-bold py-2 rounded-xl shadow-md transition-all duration-300 hover:scale-105'>
+          className='bg-purple-800 hover:bg-purple-900 text-white p-3 sm:py-2 rounded-xl shadow-md transition-all duration-300 hover:scale-105 w-full'>
           Generate
         </button>
       </div>
 
       {generated && (
-        <code className='bg-purple-200 text-purple-900 p-4 rounded-xl shadow-md mt-4'>
+        <code className='bg-purple-200 text-purple-900 p-3 sm:p-4 rounded-xl shadow-md mt-4 w-full text-center'>
           <span className='font-bold'>Your Link: </span> 
           <CopyText text={generated} />
         </code>

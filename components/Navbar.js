@@ -12,7 +12,7 @@ const Navbar = () => {
            <Link href='/'> <li>Contact Us</li> </Link>
           <li className='flex gap-3'>
             <Link href="/shorten"><button className='bg-purple-500 p-3 font-bold py-1 rounded-lg'>Try Now </button></Link>
-            <Link href="/github"><button className='bg-purple-500 p-3 font-bold py-1 rounded-lg'>Github</button></Link>
+            <Link href="https://github.com/vivekborkar17"><button className='bg-purple-500 p-3 font-bold py-1 rounded-lg'>Github</button></Link>
 
           </li>
         </ul>
