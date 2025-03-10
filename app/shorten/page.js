@@ -1,6 +1,7 @@
 "use client"
 import React, { useState } from 'react'
 import Link from 'next/link'
+import CopyText from '@/components/CopyText'
 const Shorten = () => {
     const [url, seturl] = useState("")
     const [shorturl, setshorturl] = useState("")
@@ -40,30 +41,41 @@ fetch("/api/generate", requestOptions)
     
 
   return (
-    <div className='mx-auto max-w-lg bg-purple-100 my-16 p-8 rounded-lg flex flex-col gap-4'>
-      <h1 className='font-bold text-2xl'> Generate your shorten URL      </h1>
+    <div className='mx-auto max-w-md md:max-w-lg lg:max-w-xl bg-gradient-to-r from-purple-400 to-purple-600 text-white shadow-lg my-16 p-8 rounded-2xl flex flex-col gap-6'>
+      <h1 className='font-extrabold text-3xl text-center tracking-wide'> Generate Your Short URL </h1>
 
-      <div className='flex flex-col'>
-        <input className='p-4 py-2 my-2 focus:outline-purple-600 rounded-md ' 
-        type='text' 
-        value={url}
-        placeholder='Enter Your URL'
-         onChange={e=>{seturl(e.target.value)}}/>
+      <div className='flex flex-col gap-3'>
+        <input 
+          className='p-4 py-3 bg-white text-black placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-purple-300 rounded-xl shadow-md transition-all duration-300' 
+          type='text' 
+          value={url} 
+          placeholder='Enter Your URL'
+          onChange={e => seturl(e.target.value)}
+        />
 
-        <input className='p-4 py-2 my-2 focus:outline-purple-600 rounded-md'
-         type='text' placeholder='Enter Your prefered short ulr text '
-         value={shorturl}
-         onChange={e=>{setshorturl(e.target.value)}}/>
+        <input 
+          className='p-4 py-3 bg-white text-black placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-purple-300 rounded-xl shadow-md transition-all duration-300' 
+          type='text' 
+          placeholder='Enter Your Preferred Short URL Text' 
+          value={shorturl} 
+          onChange={e => setshorturl(e.target.value)}
+        />
 
-        <button onClick={generate} className='bg-purple-500 p-3 font-bold py-1 rounded-lg my-3'>Generate</button>
+        <button 
+          onClick={generate} 
+          className='bg-purple-800 hover:bg-purple-900 text-white p-3 font-bold py-2 rounded-xl shadow-md transition-all duration-300 hover:scale-105'>
+          Generate
+        </button>
       </div>
-      {generated && 
-      <code>
-        <span>Your Link:</span> 
-          <Link target='_blank' href={generated}>{generated}</Link> 
-        </code>}
 
-    </div>
+      {generated && (
+        <code className='bg-purple-200 text-purple-900 p-4 rounded-xl shadow-md mt-4'>
+          <span className='font-bold'>Your Link: </span> 
+          <CopyText text={generated} />
+        </code>
+      )}
+</div>
+
   )
 }
 

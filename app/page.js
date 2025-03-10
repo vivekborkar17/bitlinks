@@ -5,24 +5,21 @@ import Link from "next/link";
 export default function Home() {
   return (
     <main>
-      <section className="bg-purple-100 grid grid-cols-2 h-[50vh]">
-        <div className="flex flex-col gap-3 px-4 items-center justify-center"> 
-          <p className="text-3xl font-bold">Best URL Shortner in the market</p>
-          <p className="px-40">We are the most straightforward shortner in the market. Most of the url shortner in the world will ask you give details for login and track your data.We understand your need and hence created this url shortner. </p>
-        <div className="flex gap-3">
+      <section className="bg-gradient-to-r from-purple-500 to-purple-700 text-white grid grid-cols-1 md:grid-cols-2 h-screen w-full rounded-2xl shadow-xl overflow-hidden">  
+    <div className="flex flex-col gap-4 px-6 md:px-12 items-center justify-center text-center md:text-left animate-fade-in">  
+      <p className="text-5xl font-extrabold tracking-wide animate-slide-in">Best URL Shortener in the Market</p>  
+      <p className="max-w-md text-lg leading-relaxed animate-fade-in delay-200">We are the most straightforward shortener in the market. Unlike others that require logins and track your data, we focus on simplicity and privacy for your convenience.</p>  
 
-          <Link href="/shorten"><button className='bg-purple-500 p-3 font-bold py-1 rounded-lg'>Try Now </button></Link>
-            <Link href="/github"><button className='bg-purple-500 p-3 font-bold py-1 rounded-lg'>Github</button></Link>
-            </div>
+      <div className="flex gap-4 mt-4">  
+        <Link href="/shorten"><button className='bg-purple-900 hover:bg-purple-950 text-white px-6 py-3 font-bold rounded-xl shadow-md transition-all duration-300 hover:scale-110 animate-pulse'>Try Now</button></Link>  
+        <Link href="/github"><button className='bg-purple-900 hover:bg-purple-950 text-white px-6 py-3 font-bold rounded-xl shadow-md transition-all duration-300 hover:scale-110 animate-pulse'>GitHub</button></Link>  
+      </div>  
+    </div>  
 
-        </div>
-        <div className=" flex justify-start relative">
-          <Image className="mix-blend-darken" alt="image of vector" src={"/vector.png"} fill={true}></Image>
-
-
-        </div>
-
-      </section>
+    <div className="flex justify-center items-center relative animate-fade-in delay-300">  
+      <Image className="mix-blend-lighten drop-shadow-2xl rounded-lg scale-105" alt="Image of vector" src={"/vector.png"} fill={true}></Image>  
+    </div>  
+</section>
     </main>
   );
 }
