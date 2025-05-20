@@ -2,3 +2,22 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --bg-color: #F3F4F6;
+  --text-color: #1E1E2F;
+  --primary-color: #0EA5E9;
+  --accent-color: #84CC16;
+}
+
+.dark {
+  --bg-color: #1E1E2F;
+  --text-color: #F3F4F6;
+  --primary-color: #8B5CF6;
+  --accent-color: #EC4899;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
